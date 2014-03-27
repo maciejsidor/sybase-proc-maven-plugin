@@ -1,4 +1,4 @@
-package com.googlecode.sim.maven.plugins.sybase.procedures;
+package com.googlecode.msidor.maven.plugins.sybase.procedures;
 
 import java.io.BufferedReader;
 import java.io.File;
