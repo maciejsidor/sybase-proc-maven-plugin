@@ -3,7 +3,7 @@
 	<packaging>maven-plugin</packaging>
 	<groupId>com.googlecode.msidor.maven.plugins</groupId>
 	<artifactId>sybase-proc-maven-plugin</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 
 	<name>sybase-proc-maven-plugin</name>
 
@@ -44,9 +44,9 @@
 	</issueManagement>
 
 	<scm>
-		<connection>scm:svn:https://sybase-proc-maven-plugin.googlecode.com/svn/tags/release-0.0.1</connection>
-		<developerConnection>scm:svn:https://sybase-proc-maven-plugin.googlecode.com/svn/tags/release-0.0.1</developerConnection>
-		<url>https://sybase-proc-maven-plugin.googlecode.com/svn/tags/release-0.0.1</url>
+		<connection>scm:svn:https://sybase-proc-maven-plugin.googlecode.com/svn/trunk/</connection>
+		<developerConnection>scm:svn:https://sybase-proc-maven-plugin.googlecode.com/svn/trunk/</developerConnection>
+		<url>https://sybase-proc-maven-plugin.googlecode.com/svn/trunk/</url>
 	</scm>
 
 	<url>https://code.google.com/p/sybase-proc-maven-plugin/</url>
