@@ -1,4 +1,4 @@
-#summary Summary of how to use sybase-proc-maven-plugin in your maven project.
+#summary How to use sybase-proc-maven-plugin in your maven project.
 
 = Plugin hosting =
 
