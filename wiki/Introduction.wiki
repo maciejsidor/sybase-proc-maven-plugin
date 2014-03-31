@@ -8,32 +8,32 @@ This plugin allows to generate sources for selected procedures as well as all su
 
 Additionally, the stored procedures configuration might be publish automatically to CONFLUENCE.
 
-== Tasks ==
+= Tasks =
 
 The functionality of sybase-proc-maven-plugin might be summarized in following tasks:
 
   # Parsing of stored procedure configuration file (if one has been given)
   # Establishing SYBASE connection
   # Retrieving stored procedures and all sub-procedures
-  # Writing summary report  HTML table row summarizing the procedure and its sub-procedures basic info. 
+  # Writing HTML report table summarizing the basic infos of all  procedures and all identified sub-procedures
   # Writing SQL scripts for all stored procedures and all sub-procedures found
   # Deleting files that were not concerned by the generation (optional)
-  # Updating confluence page with summary report HTML table with all procedures that have been identified and dependencies among them.
+  # Updating confluence page with summary report HTML table with all procedures that have been identified and dependencies among them (optional)
 
-=== Retrieving stored procedures and all sub-procedures ===
-Detecting sub-procedure calls is based on procedure body parsing (lookup for "exec" keyword) where commented calls are ignored.
+== Retrieving stored procedures and all sub-procedures ==
+Detecting sub-procedure calls is based on procedure body parsing (lookup for "exec" keyword). The commented calls are however ignored. 
  
-=== Writing SQL scripts ===
-The SQL scripts are written-out only if the SQL file for procedure doesn't exist yet or if the procedure body has been changed against the existing SQL file
+== Writing SQL scripts ==
+The SQL scripts are written-out only if the SQL file for procedure doesn't exist yet or if the procedure body has been changed against the existing SQL file. This allows to avoid uncommitted changes issues during project release.
 
-=== Writing summary report  HTML table ===
+== Writing summary report  HTML table ==
 The table row is composed of 4 columns:
   * Nested level (0 for top level procedure)
   * Procedure name
   * Database name
   * Compilation date
 
-=== Updating confluence page ===
+== Updating confluence page ==
 The content is put under the under the given keyword (or at the top of page in none given nor found). 
  
 Optionally, the update header might be specified.
