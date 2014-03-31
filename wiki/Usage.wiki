@@ -88,4 +88,4 @@ The reason why the functionality of this plugin is spread into two goals is to a
 
 It might not be wanted hoverer to publish the list of identified stored procedures at each build (for instance for SNAPSHOT releases). Thus the publish goal must be executed separately.
 
-Probably, the best moment to publish the stored procedures list would be the post-release phase. You might, for instance, execute the publish goal at the checkout repository  
+Probably, the best moment to publish the stored procedures list would be the post-release phase. You might, for instance, execute the publish goal on the checkout repository produced by release:perform goal.  
