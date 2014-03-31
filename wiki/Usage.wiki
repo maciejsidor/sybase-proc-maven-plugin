@@ -40,7 +40,7 @@ if not, you will have to download and install the jConnect driver to your local 
 
 Steps for downloading jConnect
 
-  # Log in to the Sybase Software Download Web site.
+  # Log in to the Sybase Software [http://downloads.sybase.com/ Download Web site].
   # The product list page appears.
   # Select jConnect for JDBC.
   # The latest versions of jConnect for JDBC appears.
