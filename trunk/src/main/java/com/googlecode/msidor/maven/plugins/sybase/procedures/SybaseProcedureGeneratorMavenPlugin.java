@@ -131,7 +131,7 @@ public class SybaseProcedureGeneratorMavenPlugin extends AbstractMojo
      * Write summary report HTML table to that file under "outputDir" directory
      * @parameter 
      */        
-    private String htmlOutputFile                   = null;    
+    private String htmlOutputFile                   = "report.html";    
     
     /**
      * If true, all SQL files that are in output directory and haven't were not identified will be deleted.
