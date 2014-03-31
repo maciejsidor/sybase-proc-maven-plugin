@@ -85,13 +85,13 @@ public class SybaseProcedureGeneratorMavenPlugin extends AbstractMojo
 
     /**
      * The SYBASE user. REQUIRED.
-     * @parameter expression="${sqlscript.sybase.user}"
+     * @parameter expression="${sybaseproc.sybase.user}"
      */
     private String syabseUser                       = null;
 
     /**
      * The SYBASE password. REQUIRED.
-     * @parameter expression="${sqlscript.sybase.password}"
+     * @parameter expression="${sybaseproc.sybase.password}"
      */    
     private String sybasePassword                   = null;
 
