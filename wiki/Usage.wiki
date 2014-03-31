@@ -34,6 +34,11 @@ Thus, the jConnect must be explictly configured in sybase-proc-maven-plugin conf
 
 If you are interested in this plugin, it is very likely that your project uses already the jConnect driver. In that case, copy the jConnect dependency configuration to the sybase-proc-maven-plugin configuration. 
 
+The following example shows basic configuration of sybase-proc-maven-plugin:
+{{{
+TODO: Add example
+}}}
+
 if not, you will have to download and install the jConnect driver to your local repository.
 
 == Installing jConnect driver ==
@@ -50,7 +55,9 @@ Steps for downloading jConnect
   # Click Continue.
   # The product download page lists the software package and the EBF-related documentation for jConnect.
   # Download and uncompress the jConnect software package.
-  # Install the JConnect in your maven local repository by executing the following command in CMD:
+  # Launch the jConnect software package installer.
+  # Go to the installation directory where your JConnect jar file is. 
+  # install the JConnect driver in your maven local repository by executing the following command in CMD:
 
 {{{
 mvn install:install-file -Dfile=jconn4.jar -DgroupId=jconnect -DartifactId=jconn4 -Dversion=ebf20686 -Dpackaging=jar
