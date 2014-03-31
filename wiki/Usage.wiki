@@ -42,7 +42,7 @@ Steps for downloading jConnect
 
   # Log in to the [http://downloads.sybase.com/ Sybase Software Download Web site].
   # The product list page appears.
-  # Select jConnect for JDBC.
+  # Select jConnect for JDBC (you might need to select "in all months" in product filter settings to JConnect appears).
   # The latest versions of jConnect for JDBC appears.
   # Select the jConnect for JDBC software that you need.
   # Read the Sybase End User License Agreement. Select I Agree.
