@@ -84,12 +84,8 @@ mvn sybase-proc:publish -Dsybaseproc.confluence.user=confluenceuser -Dsybaseproc
 }}}
 
 = Project applications =
-The reason why there are two goals is to adapt this plugin to the project lifecycle. You may, for instance, attach the generate-sql goal to the generate-sources phase. This way, whenever you will launch the project build via maven, you will always have the latest SQL files in your project. 
+The reason why the functionality of this plugin is spread into two goals is to adapt it to the project lifecycle. You may, for instance, attach the generate-sql goal to the generate-sources phase. This way, whenever you will launch the project build via maven, you will always have the latest SQL files in your project. 
 
-In 
+It might not be wanted hoverer to publish the list of identified stored procedures at each build (for instance for SNAPSHOT releases). Thus the publish goal must be executed separately.
 
-
-
-
-attach source generation to 
-publish to post-release processing
+Probably, the best moment to publish the stored procedures list would be the post-release phase. You might, for instance, execute the publish goal at the checkout repository  
