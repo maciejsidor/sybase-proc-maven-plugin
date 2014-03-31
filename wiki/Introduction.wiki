@@ -2,12 +2,32 @@
 
 = Introduction =
 
-Add your content here.
+Maven plugin that allows to generate sources of SYBASE stored procedures so the generated files might then be versioned together with project code.
 
+This plugin allows to generate sources for selected procedures as well as all sub-procedures that are being called by "exec" command.
 
-= Details =
+Additionally, the stored procedures configuration might be publish automatically to CONFLUENCE.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Tasks ==
+
+The functionality of sybase-proc-maven-plugin might be summarized in following tasks:
+
+Parsing of stored procedure configuration file (if one has been given)
+Establishing SYBASE connection
+Retrieving stored procedures and all sub-procedures
+Writing summary report HTML table with all procedures that have been identified and dependencies among them (optional)
+Extracting SQL scripts for all stored procedures and all sub-procedures found
+Deleting files that were not concerned by the generation (optional)
+
+Detecting sub-procedure calls is based on procedure body parsing (lookup for "exec" keyword) where commented calls are ignored.
+ 
+ The SQL scripts are written-out only if the SQL file for procedure doesn't exist yet or if the procedure body has been changed against the existing SQL file
+ 
+Additionally, this goal may generate HTML table row summarizing the procedure and its sub-procedures basic info. 
+The table row is composed of 4 rows:
+Nested level (0 for top level procedure)
+Procedure name
+Database name
+Compilation date
+
+This report file might be used after to publish the procedure configuration in CONFLENCE by calling the "publish" goal. 
