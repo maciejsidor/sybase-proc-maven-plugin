@@ -25,16 +25,33 @@ Add following code to your pom.xml:
 
 To see all available downloads visit [https://oss.sonatype.org/content/groups/public/com/googlecode/msidor/maven/plugins/sybase-proc-maven-plugin/ OSS SONATYPE repository for sybase-proc-maven-plugin].
 
-= JCONNECT Dependency =
+= jConnect Dependency =
 
-The sybase-proc-maven-plugin depends on JCONNECT SYBASE driver. 
-However the JCONNECT driver is not included in the project dependencies nor is available from any public maven repository (as for today). 
+The sybase-proc-maven-plugin depends on jConnect SYBASE driver. 
+However the jConnect driver is not included in the project dependencies nor is available from any public maven repository (as for today). 
 
-Thus, the JCONNECT must be explictly configured in sybase-proc-maven-plugin configuration.
+Thus, the jConnect must be explictly configured in sybase-proc-maven-plugin configuration.
 
-== Installing JCONNECT driver ==
+If you are interested in this plugin, it is very likely that your project uses already the jConnect driver. In that case, copy the jConnect dependency configuration to the sybase-proc-maven-plugin configuration. 
 
-If you are interested in this plugin, it is very likely that your project uses already the JCONNECT driver. In that case, copy the JCONNECT dependency configuration to the sybase-proc-maven-plugin configuration. 
+if not, you will have to download and install the jConnect driver to your local repository.
+
+== Installing jConnect driver ==
+
+Steps for downloading jConnect
+
+  # Log in to the Sybase Software Download Web site.
+  # The product list page appears.
+  # Select jConnect for JDBC.
+  # The latest versions of jConnect for JDBC appears.
+  # Select the jConnect for JDBC software that you need.
+  # Read the Sybase End User License Agreement. Select I Agree.
+  # Read the Export Control Restrictions. Select I Agree.
+  # Click Continue.
+  # The product download page lists the software package and the EBF-related documentation for jConnect.
+  # Download and uncompress the jConnect software package.
+
+
 
 = goals =
 
