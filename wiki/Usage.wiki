@@ -4,7 +4,7 @@
 
 The sybase-proc-maven-plugin is hosted on OSS SONATYPE repository, thus, in order to use it in your maven project you must add the OSS SONATYPE repository configuration to your pom.xml file.
 
-Ton configure OSS SONATYPE repository add following code to your pom.xml
+Add following code to your pom.xml:
 
 {{{
 <repositories>
@@ -23,10 +23,18 @@ Ton configure OSS SONATYPE repository add following code to your pom.xml
 
 To see all available downloads visit [https://oss.sonatype.org/content/groups/public/com/googlecode/msidor/maven/plugins/sybase-proc-maven-plugin/ OSS SONATYPE repository for sybase-proc-maven-plugin].
 
-Add your content here.
+= JCONNECT Dependency =
 
-= Dependency =
-Precise that JCONNECT is not delivered
+The sybase-proc-maven-plugin depends on JCONNECT SYBASE driver. 
+However the JCONNECT driver is not included in the project dependencies nor is available from any public maven repository (as for today). 
+
+Thus, the JCONNECT must be explictly configured in sybase-proc-maven-plugin configuration.
+
+== Installing JCONNECT driver ==
+
+If you are interested in this plugin, it is very likely that your project uses already the JCONNECT driver. 
+
+
 
 = goals =
 
