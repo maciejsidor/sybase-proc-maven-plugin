@@ -80,9 +80,16 @@ mvn sybase-proc:generate-sql -Dsybaseproc.sybase.user=sybaseuser -Dsybaseproc.sy
 This goal will publish the previously generated HTML report table to CONFLUENCE. To run this goal execute the following command in your project:
 
 {{{
-mvn sybase-proc:publish -Dsybaseproc.confluence.user=sybaseuser -Dsybaseproc.confluence.password=sybasepassword
+mvn sybase-proc:publish -Dsybaseproc.confluence.user=confluenceuser -Dsybaseproc.confluence.password=confluencepassword
 }}}
 
 = Project applications =
-attach source generation to generate-sources
+The reason why there are two goals is to adapt this plugin to the project lifecycle. You may, for instance, attach the generate-sql goal to the generate-sources phase. This way, whenever you will launch the project build via maven, you will always have the latest SQL files in your project. 
+
+In 
+
+
+
+
+attach source generation to 
 publish to post-release processing
