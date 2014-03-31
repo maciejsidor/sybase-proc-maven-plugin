@@ -14,7 +14,7 @@
 
 =publish=
 
-||*Name*||*Type*||*Since*||*Description*||
+|| *Name* || *Type* || *Since* || *Description* ||
 ||confluenceUser||String||0.0.1||The Confluence user; *Required property*; *User property is:*sybaseproc.confluence.user||
 ||confluencePassword||String||0.0.1||The Confluence password; *Required property*; *User property is:*sybaseproc.confluence.password||
 ||confluenceServer||String||0.0.1||The Confluence server address; *Required property* ||
