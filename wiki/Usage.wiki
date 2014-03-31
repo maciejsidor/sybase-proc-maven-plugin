@@ -1,0 +1,8 @@
+#summary Summary of how to use sybase-proc-maven-plugin in your maven project.
+
+= Plugin hosting =
+
+Add your content here.
+
+= Dependency =
+Precise that JCONNECT is not delivered
