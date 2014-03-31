@@ -4,9 +4,24 @@
 
 The sybase-proc-maven-plugin is hosted on OSS SONATYPE repository, thus, in order to use it in your maven project you must add the OSS SONATYPE repository configuration to your pom.xml file.
 
+Ton configure OSS SONATYPE repository add following code to your pom.xml
 
+{{{
+<repositories>
+  <repository>
+    <id>sonatype-oss-public</id>
+    <url>https://oss.sonatype.org/content/groups/public/</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+}}}
 
-To see all available downloads visit [https://oss.sonatype.org/content/groups/public/com/googlecode/msidor/maven/plugins/sybase-proc-maven-plugin/ OSS SONATYPE repository for sybase-proc-maven-plugin]
+To see all available downloads visit [https://oss.sonatype.org/content/groups/public/com/googlecode/msidor/maven/plugins/sybase-proc-maven-plugin/ OSS SONATYPE repository for sybase-proc-maven-plugin].
 
 Add your content here.
 
