@@ -211,8 +211,8 @@ public class SybaseProcedureGeneratorMavenPlugin extends AbstractMojo
                     {
                         //get the base and the procedure name
                         Element eElement = (Element) nNode;
-                        String procName = eElement.getElementsByTagName( "name" ).item( 0 ).getNodeValue();
-                        String baseName = eElement.getElementsByTagName( "baseName" ).item( 0 ).getNodeValue();
+                        String procName = eElement.getElementsByTagName( "name" ).item( 0 ).getTextContent();
+                        String baseName = eElement.getElementsByTagName( "baseName" ).item( 0 ).getTextContent();
 
                         //put the configuration back to the list respecting the way like it would be configured manually in plugin configuration*
                         //(due to simplify the further part of procedures checking)
