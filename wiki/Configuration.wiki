@@ -25,9 +25,43 @@
 ||htmlOutputFile||String||0.0.1||Reads summary report HTML table from that file under "outputDir" directory; *Default value is:*report.html||
 
 
-|| lines must start and end || with double vertical bars || nothing ||
-|| cells are separated by || double vertical bars || nothing ||
-|||| you can span multiple columns by || starting each cell ||
-|| with extra cell |||| separators ||
-|||||| but perhaps an example is _
-the easiest way to see ||
+[[table]]
+[[row]]
+[[hcell style="border: 1px solid silver; background-color: yellow;"]]
+header cell 0.0
+[[/hcell]]
+[[hcell style="border: 1px solid silver"]]
+header cell 0.1
+[[/hcell]]
+[[hcell style="border: 1px solid silver" ]]
+header cell 0.2
+[[/hcell]]
+[[/row]]
+[[row]]
+[[cell style="border: 1px solid silver" colspan="2"]]
+cell 1.0
+[[/cell]]
+[[cell style="border: 1px solid silver; background-color: yellow;"]]
+cell 1.2
+[[/cell]]
+[[/row]]
+[[row]]
+[[cell style="border: 1px solid silver" rowspan="2"]]
+cell 2.0
+[[/cell]]
+[[cell style="border: 1px solid silver"]]
+cell 2.1
+[[/cell]]
+[[cell style="border: 1px solid silver"]]
+cell 2.2
+[[/cell]]
+[[/row]]
+[[row]]
+[[cell style="border: 1px solid silver"]]
+cell 3.1
+[[/cell]]
+[[cell style="border: 1px solid silver"]]
+cell 3.2
+[[/cell]]
+[[/row]]
+[[/table]]
