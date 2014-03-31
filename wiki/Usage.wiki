@@ -39,7 +39,7 @@ The following example shows basic configuration of sybase-proc-maven-plugin:
 TODO: Add example
 }}}
 
-if not, you will have to download and install the jConnect driver to your local repository.
+If not, you will have to download and install the jConnect driver to your local repository.
 
 == Installing jConnect driver ==
 
@@ -63,8 +63,26 @@ Steps for downloading jConnect
 mvn install:install-file -Dfile=jconn4.jar -DgroupId=jconnect -DartifactId=jconn4 -Dversion=ebf20686 -Dpackaging=jar
 }}}
 
-= goals =
+= Goals =
 
-= scenarios =
+The sybase-proc-maven-plugin provides two goals :
+
+== generate-sql ==
+
+This goal will generate SQL scripts and the HTML report table. To run this goal execute the following command in your project:
+
+{{{
+mvn sybase-proc:generate-sql -Dsybaseproc.sybase.user=sybaseuser -Dsybaseproc.sybase.password=sybasepassword
+}}}
+
+== publish ==
+
+This goal will publish the previously generated HTML report table to CONFLUENCE. To run this goal execute the following command in your project:
+
+{{{
+mvn sybase-proc:publish -Dsybaseproc.confluence.user=sybaseuser -Dsybaseproc.confluence.password=sybasepassword
+}}}
+
+= Project applications =
 attach source generation to generate-sources
 publish to post-release processing
