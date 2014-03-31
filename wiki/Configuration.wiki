@@ -3,7 +3,9 @@
 =generate-sql=
 
 || *Name* || *Type* || *Since* || *Description* ||
-||syabseUser||String||0.0.1||The SYBASE user; *Required property*; *User property is:*sybaseproc.sybase.user||
+||syabseUser||String||0.0.1||The SYBASE user _
+*Required property* _
+*User property is:*sybaseproc.sybase.user||
 ||sybasePassword||String||0.0.1||The SYBASE password; *Required property*; *User property is:*sybaseproc.sybase.password||
 ||connectionString||String||0.0.1||The SYBASE connection string; *Required property* ||
 ||proceduresToCheck||List||0.0.1||The list of procedures to check. The procedure name should be composed of database name followed by ".." and the procedure name||
