@@ -34,7 +34,7 @@ Thus, the JCONNECT must be explictly configured in sybase-proc-maven-plugin conf
 
 == Installing JCONNECT driver ==
 
-If you are interested in this plugin, it is very likely that your project uses already the JCONNECT driver. 
+If you are interested in this plugin, it is very likely that your project uses already the JCONNECT driver. In that case, copy the JCONNECT dependency configuration to the sybase-proc-maven-plugin configuration. 
 
 = goals =
 
