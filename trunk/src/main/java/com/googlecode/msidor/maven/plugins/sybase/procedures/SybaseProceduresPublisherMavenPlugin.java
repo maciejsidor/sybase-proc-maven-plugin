@@ -60,13 +60,13 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
 
     /**
      * The CONFLUENCE user. REQUIRED
-     * @parameter expression="${sqlscript.confluence.user}"
+     * @parameter expression="${sybaseproc.confluence.user}"
      */        
     private String confleunceUser                   = null;
 
     /**
      * The CONFLUENCE password. REQUIRED
-     * @parameter expression="${sqlscript.confluence.password}"
+     * @parameter expression="${sybaseproc.confluence.password}"
      */            
     private String confluencePassword               = null;
 
