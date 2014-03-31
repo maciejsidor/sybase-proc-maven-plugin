@@ -124,7 +124,7 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
         
         try
         {            
-            getLog().info( "Updating confluence page" );
+            getLog().info( "Updating confluence page..." );
 
             //read the HTML table from file
             BufferedReader reader = new BufferedReader(new FileReader( file ));
@@ -179,7 +179,7 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
        i+=confluenceKeyWordForUpdate.length();           
        
        //if keyword was found
-       if(i>=0)
+       if(i>confluenceKeyWordForUpdate.length() )
        {
            content = content.substring(0, i)+updateHeader+contentToAdd+content.substring(i);
        }
