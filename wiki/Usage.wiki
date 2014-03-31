@@ -6,3 +6,9 @@ Add your content here.
 
 = Dependency =
 Precise that JCONNECT is not delivered
+
+= goals =
+
+= scenarios =
+attach source generation to generate-sources
+publish to post-release processing
