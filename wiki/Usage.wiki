@@ -2,7 +2,7 @@
 
 = Plugin hosting =
 
-The sybase-proc-maven-plugin is hosted on OSS SONATYPE repository this in order to use it in your maven project you must add the OSS SONATYPE repository configuration to your pom.xml file.
+The sybase-proc-maven-plugin is hosted on OSS SONATYPE repository, thus, in order to use it in your maven project you must add the OSS SONATYPE repository configuration to your pom.xml file.
 
 
 
