@@ -92,7 +92,7 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
      * The Name of the summary report HTML table file under "outputDir" directory. REQUIRED
      * @parameter 
      */        
-    private String htmlOutputFile                   = null;        
+    private String htmlOutputFile                   = "report.html";        
 
 
 
