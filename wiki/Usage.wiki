@@ -2,6 +2,10 @@
 
 = Plugin hosting =
 
+The sybase-proc-maven-plugin is hosted on OSS SONATYPE repository
+
+To see all available downloads visit https://oss.sonatype.org/content/groups/public/com/googlecode/msidor/maven/plugins/sybase-proc-maven-plugin/
+
 Add your content here.
 
 = Dependency =
