@@ -3,9 +3,7 @@
 =generate-sql=
 
 || *Name* || *Type* || *Since* || *Description* ||
-||syabseUser||String||0.0.1||The SYBASE user _
-*Required property* _
-*User property is:*sybaseproc.sybase.user||
+||syabseUser||String||0.0.1||The SYBASE user; *Required property*; *User property is:*sybaseproc.sybase.user||
 ||sybasePassword||String||0.0.1||The SYBASE password; *Required property*; *User property is:*sybaseproc.sybase.password||
 ||connectionString||String||0.0.1||The SYBASE connection string; *Required property* ||
 ||proceduresToCheck||List||0.0.1||The list of procedures to check. The procedure name should be composed of database name followed by ".." and the procedure name||
@@ -25,3 +23,11 @@
 ||updateHeader||String||0.0.1||The Confluence header for updated content ||
 ||outputDir||String||0.0.1||The path to put generated sources; *Required property* ||
 ||htmlOutputFile||String||0.0.1||Reads summary report HTML table from that file under "outputDir" directory; *Default value is:*report.html||
+
+
+|| lines must start and end || with double vertical bars || nothing ||
+|| cells are separated by || double vertical bars || nothing ||
+|||| you can span multiple columns by || starting each cell ||
+|| with extra cell |||| separators ||
+|||||| but perhaps an example is _
+the easiest way to see ||
