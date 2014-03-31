@@ -2,5 +2,12 @@
 
 =generate-sql=
 
-|| *Name* || *Type* || *Since* || *Description* ||
-|| syabseUser||String||0.0.1||The SYBASE user; *Required property*; *User property is:*sybaseproc.sybase.user||
+||*Name*||*Type*||*Since*||*Description*||
+||syabseUser||String||0.0.1||The SYBASE user; *Required property*; *User property is:*sybaseproc.sybase.user||
+||sybasePassword||String||0.0.1||The SYBASE password; *Required property*; *User property is:*sybaseproc.sybase.password||
+||connectionString||String||0.0.1||The SYBASE connection string; *Required property* ||
+||proceduresToCheck||List||0.0.1||The list of procedures to check. The procedure name should be composed of database name followed by ".." and the procedure name||
+||proceduresConfigFile||String||0.0.1||The procedures configuration file. The file should be a valid XML file. There is no strict file structure required. The only prerequisite concerns the configuration of the stored procedure which should be encapsulated between &lt;storedProcedureConfiguration&gt; tag and should contain &lt;name&gt; and &lt;baseName&gt; tags indicating procedure name and database name respectively. If this parameter is configured, the proceduresToCheck is ignored.||
+||outputDir||String||0.0.1||The path to put generated sources; *Required property* ||
+||htmlOutputFile||String||0.0.1||Write summary report HTML table to that file under "outputDir" directory; *Default value is:*report.html||
+||deleteUnusedSQLFiles||String||0.0.1||If true, all SQL files that are in output directory and haven't were not identified will be deleted; *Default value is:*true||
