@@ -176,7 +176,7 @@ public class SybaseProcedureGeneratorMavenPlugin extends AbstractMojo
          ********************************************************************/
         if ( proceduresConfigFile != null && proceduresConfigFile.length() > 0 )
         {
-            getLog().info( "Parsing procedures config file" );
+            getLog().info( "Parsing procedures config file..." );
             
             //clear any procedures that have been set manually in plugin configuration
             if(proceduresToCheck!=null)
@@ -211,8 +211,8 @@ public class SybaseProcedureGeneratorMavenPlugin extends AbstractMojo
                     {
                         //get the base and the procedure name
                         Element eElement = (Element) nNode;
-                        String procName = eElement.getElementsByTagName( "name" ).item( 0 ).getTextContent();
-                        String baseName = eElement.getElementsByTagName( "baseName" ).item( 0 ).getTextContent();
+                        String procName = eElement.getElementsByTagName( "name" ).item( 0 ).getFirstChild().getNodeValue();
+                        String baseName = eElement.getElementsByTagName( "baseName" ).item( 0 ).getFirstChild().getNodeValue();
 
                         //put the configuration back to the list respecting the way like it would be configured manually in plugin configuration*
                         //(due to simplify the further part of procedures checking)
@@ -234,7 +234,7 @@ public class SybaseProcedureGeneratorMavenPlugin extends AbstractMojo
         Connection connection = null;
         try
         {
-            getLog().info( "Connecting to SYBASE" );
+            getLog().info( "Connecting to SYBASE..." );
 
             //prepare the driver
             SybDriver sybDriver = (SybDriver) Class.forName( "com.sybase.jdbc3.jdbc.SybDriver" ).newInstance();
@@ -263,7 +263,7 @@ public class SybaseProcedureGeneratorMavenPlugin extends AbstractMojo
         ArrayList<Procedure> topLevelProcedures = new ArrayList<Procedure>();
         try
         {
-            getLog().info( "Checking procedures" );
+            getLog().info( "Checking procedures..." );
 
             //go through all configured procedures
             for ( String procedureToCheck : proceduresToCheck )
@@ -374,7 +374,7 @@ public class SybaseProcedureGeneratorMavenPlugin extends AbstractMojo
         HashSet<String> proceduresPrinted = new HashSet<String>();
         try
         {
-            getLog().info( "Writing SQL scripts" );
+            getLog().info( "Writing SQL scripts..." );
 
             //output all the SQL scripts for identified stored procedures
             for ( Procedure procedure : topLevelProcedures )
@@ -397,7 +397,7 @@ public class SybaseProcedureGeneratorMavenPlugin extends AbstractMojo
         {
             try
             {
-                getLog().info( "Deleting unused files" );
+                getLog().info( "Deleting unused files..." );
                 
                 //get all the SQL files that are currently in the output directory
                 File[] listOfFilesInOutputDir = outputDirFile.listFiles( new FilenameFilter()
