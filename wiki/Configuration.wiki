@@ -3,7 +3,7 @@
 =generate-sql=
 
 || *Name* || *Type* || *Since* || *Description* ||
-||syabseUser||String||0.0.1||
+|| syabseUser||String||0.0.1|
   *The SYBASE user
   **Required property*
-  **User property is:*sybaseproc.sybase.user||
+  **User property is:*sybaseproc.sybase.user|
