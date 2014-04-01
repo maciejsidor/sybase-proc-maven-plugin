@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Maven plugin that allows to generate sources of SYBASE stored procedures so the generated files might then be versioned together with project code.
+sybase-proc-maven-plugin allows to generate sources of SYBASE stored procedures so the generated files might then be versioned together with project code.
 
 This plugin allows to generate sources for selected procedures as well as all sub-procedures that are being called by "exec" command.
 
@@ -21,7 +21,7 @@ The functionality of sybase-proc-maven-plugin might be summarized in following t
   # Updating confluence page with summary report HTML table with all procedures that have been identified and dependencies among them (optional)
 
 == Retrieving stored procedures and all sub-procedures ==
-Detecting sub-procedure calls is based on procedure body parsing (lookup for "exec" keyword). The commented calls are however ignored. 
+Detecting sub-procedure calls is based on procedure body parsing (scanning for "exec" keyword). The commented calls are however ignored. 
  
 == Writing SQL scripts ==
 The SQL scripts are written-out only if the SQL file for procedure doesn't exist yet or if the procedure body has been changed against the existing SQL file. This allows to avoid uncommitted changes issues during project release.
