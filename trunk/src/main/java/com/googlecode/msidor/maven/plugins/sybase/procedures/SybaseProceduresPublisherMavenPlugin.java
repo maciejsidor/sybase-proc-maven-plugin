@@ -109,6 +109,10 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
      */
     public void execute() throws MojoExecutionException, MojoFailureException
     {
+        
+        //Ignore the execution as the plugin is not configured at all for the project
+        if(outputDir==null)
+            return;
 
         //normalize output directory path
         if ( outputDir != null && !outputDir.endsWith( File.separator ) )
@@ -175,12 +179,18 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
        
        //try to find the keyword under which the content will be put 
        String content = (String)page.get("content");
-       int i = content.indexOf(confluenceKeyWordForUpdate);
-       i+=confluenceKeyWordForUpdate.length();           
+       int i = -1;
+       
+       if(confluenceKeyWordForUpdate!=null)
+           i = content.indexOf(confluenceKeyWordForUpdate);
+       
+       if(updateHeader==null)
+           updateHeader="";
        
        //if keyword was found
-       if(i>confluenceKeyWordForUpdate.length() )
+       if(i>=0 )
        {
+           i+=confluenceKeyWordForUpdate.length();
            content = content.substring(0, i)+updateHeader+contentToAdd+content.substring(i);
        }
        else
