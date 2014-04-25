@@ -711,12 +711,12 @@ public class SybaseProcedureGeneratorMavenPlugin extends AbstractMojo
         byte[] buffer = new byte[1024];
         char[] bufferStr = new char[1024];
         MessageDigest complete = MessageDigest.getInstance( "MD5" );
-        int numRead;
-        buffer = stringToBytesUTFCustom(bufferStr );
+        int numRead;        
         do
         {
             //numRead = fis.read(buffer);
             numRead = fis.read( bufferStr );
+            buffer = stringToBytesUTFCustom(bufferStr );
             
             if ( numRead > 0 )
             {
