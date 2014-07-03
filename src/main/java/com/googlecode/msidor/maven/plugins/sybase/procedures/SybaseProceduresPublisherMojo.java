@@ -18,14 +18,11 @@ package com.googlecode.msidor.maven.plugins.sybase.procedures;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.net.URL;
 import java.util.HashMap;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import org.apache.xmlrpc.client.XmlRpcClient;
-import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 
 /**
  * @author Maciej SIDOR
@@ -43,7 +40,7 @@ import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
  *
  * @goal publish
  */
-public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
+public class SybaseProceduresPublisherMojo extends AbstractMojo
 {
     
     /**
@@ -74,7 +71,7 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
      * The ID of CONFLUENCE page to update. REQUIRED
      * @parameter
      */         
-    private Object confluencePageID                 = null;
+    private String confluencePageID                 = null;
 
     /**
      * The keyword on CONFLUENCE page under which the new content will be put.
@@ -94,6 +91,10 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
      */        
     private String htmlOutputFile                   = "report.html";        
 
+    /**
+     * The default DAO
+     */
+    private SybaseProceduresMojoDAOI dao 			= new DefaultSybaseProceduresMojoDAO();
 
 
     @Override
@@ -155,8 +156,6 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
 
     }
     
-
-    @SuppressWarnings("unchecked")
     /**
      * Update confluence page with given content and defined header under the given keyword (or at the top of page in none given)
      * @param contentToAdd - content to put to confluence page
@@ -165,16 +164,13 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
     private void updateConfluencePage(String contentToAdd) throws Exception
     {
        //get the connection string
-       XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-       config.setServerURL(new URL(confluenceServer +"/rpc/xmlrpc"));
-       XmlRpcClient client = new XmlRpcClient();
-       client.setConfig(config);      
+       dao.initializeXmlRpcClient(confluenceServer);
        
        //authenticate with user and password
-       Object result = client.execute("confluence2.login",new String[]{confleunceUser,confluencePassword} );
+       Object result = dao.authenticateToConfluence(confleunceUser, confluencePassword);
        
        //get the confluence page
-       HashMap<Object,Object> page = (HashMap<Object,Object>)client.execute("confluence2.getPage",new Object[]{result,confluencePageID} );
+       HashMap<Object,Object> page = dao.getConfluencePage(result, confluencePageID);
        getLog().debug("Current CONFLUENCE page: "+ page);
        
        //try to find the keyword under which the content will be put 
@@ -204,8 +200,17 @@ public class SybaseProceduresPublisherMavenPlugin extends AbstractMojo
        //update confluence page
        page.put("content",content);       
        HashMap<Object,Object> pageUpdateOptions  = new HashMap<Object,Object>();
-       page = (HashMap<Object,Object>)client.execute("confluence2.updatePage",new Object[]{result,page,pageUpdateOptions} );
+       dao.updateConfluencePage(result, page, pageUpdateOptions);
     }
+
+	/**
+	 * Set the DAO
+	 * @param dao the dao to set
+	 */
+	public void setDao(SybaseProceduresMojoDAOI dao)
+	{
+		this.dao = dao;
+	}
 
 
 

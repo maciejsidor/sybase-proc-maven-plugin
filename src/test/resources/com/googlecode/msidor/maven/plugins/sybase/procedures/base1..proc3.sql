@@ -1,0 +1,1 @@
+CREATE PROCEDURE proc3 (IN product_id INT, OUT type CHAR(10))BEGIN  DECLARE prod_name CHAR(20) ;  SELECT name INTO prod_name FROM "GROUPO"."Products"END
