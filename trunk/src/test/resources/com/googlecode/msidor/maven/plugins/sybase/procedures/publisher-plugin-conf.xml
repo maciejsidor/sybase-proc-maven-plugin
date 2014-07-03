@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.googlecode.msidor.maven.plugins</groupId>
+	<artifactId>sybase-proc-maven-plugin-test</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Test MyMojo</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.googlecode.msidor.maven.plugins</groupId>
+				<artifactId>sybase-proc-maven-plugin</artifactId>
+				<version>0.0.6-SNAPSHOT</version>
+				<configuration>
+					<outputDir>out</outputDir>
+					<confluenceServer>http://confluence.organization.net</confluenceServer>
+					<confluencePageID>24391678</confluencePageID>
+					<updateHeader><![CDATA[<h2>${project.version}</h2>]]></updateHeader>
+					<confluenceKeyWordForUpdate></confluenceKeyWordForUpdate>
+					<confleunceUser>MSIDOR</confleunceUser>
+					<confluencePassword>123456</confluencePassword>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

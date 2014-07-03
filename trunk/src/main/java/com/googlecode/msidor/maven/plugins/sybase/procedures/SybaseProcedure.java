@@ -25,13 +25,13 @@ import java.util.Map;
  * 
  * Object that contains all basic informations about the SYBASE stored procedure. 
  */
-public class Procedure
+public class SybaseProcedure
 {
     /**
      * The static collection of all created objects.
      * Allows to retrieve existing procedure instead of creating the doubled one 
      */
-    private static Map<String, Procedure> allProcedures = new Hashtable<String, Procedure>();
+    private static Map<String, SybaseProcedure> allProcedures = new Hashtable<String, SybaseProcedure>();
 
     /**
      * Database name
@@ -56,7 +56,7 @@ public class Procedure
     /**
      * List if sub procedures called by this procedure
      */
-    private List<Procedure> procedures = new ArrayList<Procedure>();
+    private List<SybaseProcedure> procedures = new ArrayList<SybaseProcedure>();
 
     
     /**
@@ -65,14 +65,14 @@ public class Procedure
      * @param name - procedure name
      * @param creationDate - compilation date
      */
-    public Procedure( String dbName, String name, String creationDate )
+    public SybaseProcedure( String dbName, String name, String creationDate )
     {
         super();
         this.dbName = dbName;
         this.name = name;
         this.creationDate = creationDate;
 
-        Procedure.allProcedures.put( dbName + ":" + name, this );
+        SybaseProcedure.allProcedures.put( dbName + ":" + name, this );
     }
 
     /**
@@ -81,12 +81,12 @@ public class Procedure
      * @param name - procedure name
      * @return Procedure if already created or null if none found
      */
-    public static Procedure getExistingProcedure( String dbName, String name )
+    public static SybaseProcedure getExistingProcedure( String dbName, String name )
     {
-        if ( !Procedure.allProcedures.containsKey( dbName + ":" + name ) )
+        if ( !SybaseProcedure.allProcedures.containsKey( dbName + ":" + name ) )
             return null;
         else
-            return Procedure.allProcedures.get( dbName + ":" + name );
+            return SybaseProcedure.allProcedures.get( dbName + ":" + name );
     }
 
     /**
@@ -156,7 +156,7 @@ public class Procedure
     /**
      * @return the procedures
      */
-    public List<Procedure> getProcedures()
+    public List<SybaseProcedure> getProcedures()
     {
         return procedures;
     }
@@ -164,7 +164,7 @@ public class Procedure
     /**
      * @param procedures the procedures to set
      */
-    public void setProcedures( List<Procedure> procedures )
+    public void setProcedures( List<SybaseProcedure> procedures )
     {
         this.procedures = procedures;
     }
