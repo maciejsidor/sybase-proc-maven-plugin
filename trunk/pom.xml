@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>maven-plugin</packaging>
 	<groupId>com.googlecode.msidor.maven.plugins</groupId>
@@ -113,50 +114,34 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			
-      <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-source-plugin</artifactId>
-              <version>2.2.1</version>
-              <executions>
-                      <execution>
-                              <id>attach-sources</id>
-                              <goals>
-                                      <goal>jar</goal>
-                              </goals>
-                      </execution>
-              </executions>
-      </plugin>
-
-      <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-javadoc-plugin</artifactId>
-              <version>2.9.1</version>
-              <executions>
-                      <execution>
-                              <id>attach-javadocs</id>
-                              <goals>
-                                      <goal>jar</goal>
-                              </goals>
-                      </execution>
-              </executions>
-      </plugin>   		
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>1.5</version>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
 				<executions>
 					<execution>
-						<id>sign-artifacts</id>
-						<phase>verify</phase>
+						<id>attach-sources</id>
 						<goals>
-							<goal>sign</goal>
+							<goal>jar</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
 		</plugins>
 	</build>
@@ -164,9 +149,9 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>${jconnect.groupId}</groupId>
-			<artifactId>${jconnect.artifactId}</artifactId>
-			<version>${jconnect.version}</version>
+			<groupId>jconnect</groupId>
+			<artifactId>jconn4</artifactId>
+			<version>EBF20144</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -184,8 +169,8 @@
 			<artifactId>maven-plugin-testing-harness</artifactId>
 			<version>1.0-beta-1</version>
 			<scope>test</scope>
-		</dependency>		
-		
+		</dependency>
+
 
 	</dependencies>
 

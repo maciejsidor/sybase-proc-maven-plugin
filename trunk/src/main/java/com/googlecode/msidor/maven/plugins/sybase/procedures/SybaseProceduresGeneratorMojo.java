@@ -180,7 +180,7 @@ public class SybaseProceduresGeneratorMojo extends AbstractMojo
 	/**
 	 * Default DAO instance
 	 */
-	private SybaseProceduresMojoDAOI dao = null;
+	private SybaseProceduresMojoDAOI dao = new DefaultSybaseProceduresMojoDAO();
 
 	/**
 	 * The implementation of "generate-sql" goal method.
@@ -242,6 +242,9 @@ public class SybaseProceduresGeneratorMojo extends AbstractMojo
 	                proceduresToCheck= new ArrayList<String>();
 	            }
 	            */
+	            
+                if(proceduresToCheck==null)               
+                    proceduresToCheck= new ArrayList<String>();
 	
 	            try
 	            {
