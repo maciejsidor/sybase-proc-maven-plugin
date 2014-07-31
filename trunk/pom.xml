@@ -166,7 +166,7 @@
 		<dependency>
 			<groupId>jconnect</groupId>
 			<artifactId>jconn4</artifactId>
-			<version>EBF20144</version>
+			<version>ebf20686</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
