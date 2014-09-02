@@ -276,7 +276,10 @@ public class SybaseProceduresGeneratorMojo extends AbstractMojo
 	
 	                        //put the configuration back to the list respecting the way like it would be configured manually in plugin configuration*
 	                        //(due to simplify the further part of procedures checking)
-	                        proceduresToCheck.add( baseName + ".." + procName );
+	                        if(procName.contains( ".." ))
+	                            proceduresToCheck.add( procName );
+	                        else
+	                            proceduresToCheck.add( baseName + ".." + procName );
 	
 	                    }
 	                }
