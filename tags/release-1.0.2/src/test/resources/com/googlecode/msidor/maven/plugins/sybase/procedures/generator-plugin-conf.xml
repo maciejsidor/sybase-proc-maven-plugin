@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.googlecode.msidor.maven.plugins</groupId>
+	<artifactId>sybase-proc-maven-plugin-test</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Test MyMojo</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.googlecode.msidor.maven.plugins</groupId>
+				<artifactId>sybase-proc-maven-plugin</artifactId>
+				<version>0.0.6-SNAPSHOT</version>
+				<configuration>
+					<syabseDriverVersion>driver</syabseDriverVersion>
+					<syabseUser>MSIDOR</syabseUser>
+					<sybasePassword>123456</sybasePassword>
+					<connectionString>jdbc:sybase:jndi:ldap://sybaseldap:389/sybaseServername=SERVER,ou=sybase,dc=db</connectionString>
+					<proceduresConfigFile>src/test/resources/com/googlecode/msidor/maven/plugins/sybase/procedures/procfiles1.xml</proceduresConfigFile>
+					<proceduresToCheck>
+						<param>base1..proc1</param>
+						<param>base1..proc2</param>
+					</proceduresToCheck>					
+					<proceduresConfigFiles>
+						<param>src/test/resources/com/googlecode/msidor/maven/plugins/sybase/procedures/procfiles2.xml</param>
+						<param>src/test/resources/com/googlecode/msidor/maven/plugins/sybase/procedures/procfiles3.xml</param>
+					</proceduresConfigFiles>
+					<outputDir>out</outputDir>
+					<deleteUnusedSQLFiles>true</deleteUnusedSQLFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,10 @@
+<procs>
+	<storedProcedureConfiguration>
+		<name>proc6</name>
+		<baseName>base3</baseName>
+	</storedProcedureConfiguration>
+	<storedProcedureConfiguration>
+		<name>proc7</name>
+		<baseName>base1</baseName>
+	</storedProcedureConfiguration>
+</procs>
