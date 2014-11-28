@@ -205,8 +205,12 @@ public class SybaseProceduresGeneratorMojo extends AbstractMojo
          * Initialization
          ********************************************************************/
         
+        //Ignore the execution as the plugin is not configured at all for the project
+        if(outputDir==null)
+            return;		
+		
         //normalize output directory path
-        if ( outputDir != null && !outputDir.endsWith( File.separator ) )
+        if ( !outputDir.endsWith( File.separator ) )
         {
             outputDir += File.separator;
         }
