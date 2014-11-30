@@ -5,9 +5,11 @@
 || *Name* || *Type* || *Since* || *Description* ||
 ||syabseUser||String||0.0.1||The SYBASE user; *Required property*; *User property is:*sybaseproc.sybase.user||
 ||sybasePassword||String||0.0.1||The SYBASE password; *Required property*; *User property is:*sybaseproc.sybase.password||
+||syabseDriverVersion||String||0.0.1||The SYBASE driver version; *Required property* ||
 ||connectionString||String||0.0.1||The SYBASE connection string; *Required property* ||
 ||proceduresToCheck||List||0.0.1||The list of procedures to check. The procedure name should be composed of database name followed by ".." and the procedure name||
 ||proceduresConfigFile||String||0.0.1||The procedures configuration file. The file should be a valid XML file. There is no strict file structure required. The only prerequisite concerns the configuration of the stored procedure which should be encapsulated between <storedProcedureConfiguration> tag and should contain <name> and <baseName> tags indicating procedure name and database name respectively. If this parameter is configured, the proceduresToCheck is ignored.||
+||proceduresConfigFiles||String||0.0.1||Allows to specify more than one configuration file. See The procedures configuration file for more details.||
 ||outputDir||String||0.0.1||The path to put generated sources; *Required property* ||
 ||htmlOutputFile||String||0.0.1||Write summary report HTML table to that file under "outputDir" directory; *Default value is:*report.html||
 ||deleteUnusedSQLFiles||boolean||0.0.1||If true, all SQL files that are in output directory and haven't were not identified will be deleted; *Default value is:*true||
